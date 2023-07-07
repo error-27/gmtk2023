@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/MenuTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/ui/StartScreen.gd" type="Script" id=2]
 
 [node name="StartScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
 anchor_left = 1.0
@@ -42,3 +44,38 @@ margin_top = 48.0
 margin_right = 132.0
 margin_bottom = 68.0
 text = "Settings"
+
+[node name="CreditsPanel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -309.0
+margin_top = -201.0
+margin_right = 309.0
+margin_bottom = 201.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 14.0
+margin_top = 17.0
+margin_right = -14.0
+margin_bottom = -27.0
+bbcode_enabled = true
+
+[node name="CloseButton" type="Button" parent="CreditsPanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -23.5
+margin_top = -22.0
+margin_right = 23.5
+margin_bottom = -2.0
+text = "Close"
+
+[connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="meta_clicked" from="CreditsPanel/RichTextLabel" to="." method="_credits_links"]
+[connection signal="pressed" from="CreditsPanel/CloseButton" to="." method="_on_CloseButton_pressed"]
