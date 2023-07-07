@@ -23,6 +23,8 @@ func _ready():
 	
 	# Set label to that
 	credits_label.bbcode_text = copyright_text
+	
+	cold_open()
 
 
 func _credits_links(meta):
@@ -36,3 +38,17 @@ func _on_CloseButton_pressed():
 
 func _on_CreditsButton_pressed():
 	$CreditsPanel.show()
+
+# Run the cold open sequence to have the funny thing happen
+func cold_open():
+	randomize()
+	$Buttons/CreditsButton.disabled = true
+	$Buttons/StartButton.disabled = true
+	$Buttons/SettingsButton.disabled = true
+	$Buttons/CreditsButton.modulate.a = 0
+	$Buttons/StartButton.modulate.a = 0
+	$Buttons/SettingsButton.modulate.a = 0
+	$FakeButtons.show()
+	for button in $FakeButtons.get_children():
+		(button as RigidBody2D).set_position(Vector2(rand_range(OS.window_size.x - 40, 132), rand_range(OS.window_size.y - 10, 132)))
+		(button as RigidBody2D).rotate(rand_range(0, 6))

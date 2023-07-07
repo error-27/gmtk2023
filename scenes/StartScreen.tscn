@@ -1,7 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/MenuTheme.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/ui/StartScreen.gd" type="Script" id=2]
+[ext_resource path="res://scripts/ui/FakeButton.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=7]
+
+[sub_resource type="PhysicsMaterial" id=6]
+bounce = 0.7
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 65, 11 )
+
+[sub_resource type="LineShape2D" id=2]
+normal = Vector2( 1, 0 )
+
+[sub_resource type="LineShape2D" id=3]
+normal = Vector2( -1, 0 )
+
+[sub_resource type="LineShape2D" id=4]
+normal = Vector2( 0, 1 )
+
+[sub_resource type="LineShape2D" id=5]
 
 [node name="StartScreen" type="Control"]
 anchor_right = 1.0
@@ -10,22 +30,70 @@ theme = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-margin_left = -75.0
-margin_top = -7.0
-margin_bottom = 7.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -37.5
+margin_top = 89.0
+margin_right = 37.5
+margin_bottom = 103.0
 theme = ExtResource( 1 )
 text = "GAME TITLE"
 
-[node name="Buttons" type="VBoxContainer" parent="."]
+[node name="ButtonHints" type="VBoxContainer" parent="."]
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-margin_top = -34.0
+margin_left = -66.0
+margin_top = 36.0
+margin_right = 66.0
+margin_bottom = 104.0
+grow_vertical = 2
+
+[node name="Start" type="ColorRect" parent="ButtonHints"]
 margin_right = 132.0
-margin_bottom = 34.0
+margin_bottom = 20.0
+size_flags_vertical = 3
+
+[node name="Start" type="Area2D" parent="ButtonHints/Start"]
+position = Vector2( 64, 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonHints/Start/Start"]
+shape = SubResource( 7 )
+
+[node name="Credits" type="ColorRect" parent="ButtonHints"]
+margin_top = 24.0
+margin_right = 132.0
+margin_bottom = 44.0
+size_flags_vertical = 3
+
+[node name="Credits" type="Area2D" parent="ButtonHints/Credits"]
+position = Vector2( 64, 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonHints/Credits/Credits"]
+shape = SubResource( 7 )
+
+[node name="Settings" type="ColorRect" parent="ButtonHints"]
+margin_top = 48.0
+margin_right = 132.0
+margin_bottom = 68.0
+size_flags_vertical = 3
+
+[node name="Settings" type="Area2D" parent="ButtonHints/Settings"]
+position = Vector2( 64, 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonHints/Settings/Settings"]
+shape = SubResource( 7 )
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = 36.0
+margin_right = 66.0
+margin_bottom = 104.0
 grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="Buttons"]
@@ -44,6 +112,74 @@ margin_top = 48.0
 margin_right = 132.0
 margin_bottom = 68.0
 text = "Settings"
+
+[node name="FakeButtons" type="Node2D" parent="."]
+
+[node name="Start" type="RigidBody2D" parent="FakeButtons"]
+input_pickable = true
+mass = 8.03
+physics_material_override = SubResource( 6 )
+gravity_scale = 2.0
+script = ExtResource( 3 )
+
+[node name="StartButton" type="Button" parent="FakeButtons/Start"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -10.0
+margin_right = 66.0
+margin_bottom = 10.0
+mouse_default_cursor_shape = 6
+text = "Start"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FakeButtons/Start"]
+shape = SubResource( 1 )
+
+[node name="Settings" type="RigidBody2D" parent="FakeButtons"]
+input_pickable = true
+mass = 8.03
+physics_material_override = SubResource( 6 )
+gravity_scale = 2.0
+script = ExtResource( 3 )
+
+[node name="SettingsButton" type="Button" parent="FakeButtons/Settings"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -10.0
+margin_right = 66.0
+margin_bottom = 10.0
+mouse_default_cursor_shape = 6
+text = "Settings"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FakeButtons/Settings"]
+shape = SubResource( 1 )
+
+[node name="Credits" type="RigidBody2D" parent="FakeButtons"]
+input_pickable = true
+mass = 8.03
+physics_material_override = SubResource( 6 )
+gravity_scale = 2.0
+script = ExtResource( 3 )
+
+[node name="CreditsButton" type="Button" parent="FakeButtons/Credits"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -66.0
+margin_top = -10.0
+margin_right = 66.0
+margin_bottom = 10.0
+mouse_default_cursor_shape = 6
+text = "Credits"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FakeButtons/Credits"]
+shape = SubResource( 1 )
 
 [node name="CreditsPanel" type="Panel" parent="."]
 visible = false
@@ -76,6 +212,36 @@ margin_right = 23.5
 margin_bottom = -2.0
 text = "Close"
 
+[node name="Walls" type="Node" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+shape = SubResource( 2 )
+
+[node name="RightWall" type="StaticBody2D" parent="Walls"]
+position = Vector2( 1024, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+shape = SubResource( 3 )
+
+[node name="TopWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+shape = SubResource( 4 )
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2( 0, 600 )
+shape = SubResource( 5 )
+
 [connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="button_down" from="FakeButtons/Start/StartButton" to="FakeButtons/Start" method="_pressed"]
+[connection signal="button_up" from="FakeButtons/Start/StartButton" to="FakeButtons/Start" method="_let_go"]
+[connection signal="button_down" from="FakeButtons/Settings/SettingsButton" to="FakeButtons/Settings" method="_pressed"]
+[connection signal="button_up" from="FakeButtons/Settings/SettingsButton" to="FakeButtons/Settings" method="_let_go"]
+[connection signal="button_down" from="FakeButtons/Credits/CreditsButton" to="FakeButtons/Credits" method="_pressed"]
+[connection signal="button_up" from="FakeButtons/Credits/CreditsButton" to="FakeButtons/Credits" method="_let_go"]
 [connection signal="meta_clicked" from="CreditsPanel/RichTextLabel" to="." method="_credits_links"]
 [connection signal="pressed" from="CreditsPanel/CloseButton" to="." method="_on_CloseButton_pressed"]
