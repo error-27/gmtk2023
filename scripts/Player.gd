@@ -22,12 +22,12 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = jump_height
-		else:
-			if Input.is_action_just_released("Jump") and velocity.y < jump_in_air:
-				velocity.y = jump_in_air
+	else:
+		if Input.is_action_just_released("Jump") and velocity.y < jump_in_air:
+			velocity.y = jump_in_air
 			
-			if velocity.y > 6:
-				velocity.y += 4
+		if velocity.y > 6:
+			velocity.y += 4
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
