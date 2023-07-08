@@ -41,6 +41,15 @@ theme = ExtResource( 1 )
 theme_type_variation = "TitleLabel"
 text = "GAME TITLE"
 
+[node name="Build" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -16.0
+text = "Dev Build"
+
 [node name="ButtonHints" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5

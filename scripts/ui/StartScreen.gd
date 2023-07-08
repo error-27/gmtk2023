@@ -12,7 +12,7 @@ func _ready():
 	
 	# Components and license names
 	var copyright_info = Engine.get_copyright_info()
-	copyright_text += "\n===THIRD-PARTY COMPONENTS===\n"
+	copyright_text += "\n\n===THIRD-PARTY COMPONENTS===\n"
 	for part in copyright_info:
 		copyright_text += part["name"] + " - " + part["parts"][0]["license"] + "\n"
 	
