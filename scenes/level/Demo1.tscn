@@ -21,3 +21,4 @@ position = Vector2( 464, 357 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 script = ExtResource( 3 )
+subject_path = NodePath("../Platform")
