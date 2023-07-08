@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/tiles/level_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/HoverPlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/level/FollowCamera.gd" type="Script" id=3]
 [ext_resource path="res://scripts/level/Level.gd" type="Script" id=4]
 
 [node name="Demo1" type="Node2D"]
@@ -16,3 +17,7 @@ tile_data = PoolIntArray( 0, 0, 0, 20, 3, 0, 21, 3, 0, 65536, 0, 0, 65556, 3, 0,
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 464, 357 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 3 )
