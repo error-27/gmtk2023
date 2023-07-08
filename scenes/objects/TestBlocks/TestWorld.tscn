@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/objects/TestBlocks/TestBlock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+
+[node name="TestArea" type="Node2D"]
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 100, 100 )
+msaa = 1
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Node2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 92, 455 )
+
+[node name="Node2D2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 152, 455 )
+
+[node name="Node2D3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 212, 455 )
+
+[node name="Node2D4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 247, 455 )
+
+[node name="TestBlock" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 391, 455 )
+
+[node name="TestBlock2" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 574, 333 )
+
+[node name="TestBlock5" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 694, 333 )
+
+[node name="TestBlock6" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 634, 333 )
+
+[node name="TestBlock7" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 755, 333 )
+
+[node name="TestBlock8" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 875, 333 )
+
+[node name="TestBlock9" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 815, 333 )
+
+[node name="TestBlock10" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 936, 272 )
+
+[node name="TestBlock11" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 936, 211 )
+
+[node name="TestBlock12" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 997, 150 )
+
+[node name="TestBlock3" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 513, 394 )
+
+[node name="TestBlock4" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 452, 455 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 94, 392 )
