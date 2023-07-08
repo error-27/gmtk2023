@@ -8,15 +8,16 @@ func _ready():
 	
 	copyright_text += "Created by [url=https://github.com/ErrorInCode27][Error_27][/url] and [url=https://github.com/Wired-Weasel]Wired-Weasel[/url] for GMTK Game Jam 2023\n"
 	copyright_text += "Made using the [url=https://godotengine.org/license]Godot game engine[/url]\n"
+	copyright_text += "Using [url=https://www.dafont.com/superstar-2.font]Superstar font[/url]"
 	
 	# Components and license names
 	var copyright_info = Engine.get_copyright_info()
-	copyright_text += "\nTHIRD-PARTY COMPONENTS\n"
+	copyright_text += "\n\n===THIRD-PARTY COMPONENTS===\n"
 	for part in copyright_info:
 		copyright_text += part["name"] + " - " + part["parts"][0]["license"] + "\n"
 	
 	# Actual license text
-	copyright_text += "\nLICENSE TEXTS\n"
+	copyright_text += "\n===LICENSE TEXTS===\n"
 	var licenses = Engine.get_license_info()
 	for license in licenses:
 		copyright_text += "-----" + license + "-----\n" + licenses[license] + "\n\n"
@@ -52,3 +53,7 @@ func cold_open():
 	for button in $FakeButtons.get_children():
 		(button as RigidBody2D).set_position(Vector2(rand_range(OS.window_size.x - 40, 132), rand_range(OS.window_size.y - 10, 132)))
 		(button as RigidBody2D).rotate(rand_range(0, 6))
+
+
+func _on_StartButton_pressed():
+	get_tree().change_scene("res://scenes/CharacterSelect.tscn")

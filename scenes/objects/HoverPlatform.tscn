@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/objects/platform.png" type="Texture" id=1]
+[ext_resource path="res://scripts/objects/HoverPlatform.gd" type="Script" id=2]
+[ext_resource path="res://assets/MenuTheme.tres" type="Theme" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 45, 12.5 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "gear_spin"
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Platform:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[node name="Platform" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 2 )
+horizontal = false
+vertical = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -5.5 )
+shape = SubResource( 1 )
+
+[node name="Platform" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/gear_spin = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_right = 159.0
+margin_bottom = 143.0
+theme = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -27.0
+margin_top = 4.0
+margin_right = 27.0
+margin_bottom = 18.0
+grow_horizontal = 2
+theme = ExtResource( 3 )
+text = "Platform"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 26.0
+margin_right = -4.0
+
+[node name="Horizontal" type="CheckBox" parent="Panel/VBoxContainer"]
+margin_right = 151.0
+margin_bottom = 24.0
+text = "Horizontal"
+
+[node name="Vertical" type="CheckBox" parent="Panel/VBoxContainer"]
+margin_top = 28.0
+margin_right = 151.0
+margin_bottom = 52.0
+text = "Vertical"
+
+[node name="Reverse" type="CheckBox" parent="Panel/VBoxContainer"]
+margin_top = 56.0
+margin_right = 151.0
+margin_bottom = 80.0
+text = "Reverse-Hzntl"
+
+[node name="Reverse2" type="CheckBox" parent="Panel/VBoxContainer"]
+margin_top = 84.0
+margin_right = 151.0
+margin_bottom = 108.0
+text = "Reverse-Vtcl"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

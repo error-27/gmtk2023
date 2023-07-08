@@ -36,8 +36,19 @@ margin_left = -37.5
 margin_top = 89.0
 margin_right = 37.5
 margin_bottom = 103.0
+grow_horizontal = 2
 theme = ExtResource( 1 )
+theme_type_variation = "TitleLabel"
 text = "GAME TITLE"
+
+[node name="Build" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -68.0
+margin_top = -16.0
+text = "Dev Build"
 
 [node name="ButtonHints" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -45,14 +56,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -66.0
-margin_top = 36.0
+margin_top = 30.0
 margin_right = 66.0
-margin_bottom = 104.0
+margin_bottom = 110.0
 grow_vertical = 2
 
 [node name="Start" type="ColorRect" parent="ButtonHints"]
 margin_right = 132.0
-margin_bottom = 20.0
+margin_bottom = 24.0
 size_flags_vertical = 3
 
 [node name="Start" type="Area2D" parent="ButtonHints/Start"]
@@ -62,9 +73,9 @@ position = Vector2( 64, 10 )
 shape = SubResource( 7 )
 
 [node name="Credits" type="ColorRect" parent="ButtonHints"]
-margin_top = 24.0
+margin_top = 28.0
 margin_right = 132.0
-margin_bottom = 44.0
+margin_bottom = 52.0
 size_flags_vertical = 3
 
 [node name="Credits" type="Area2D" parent="ButtonHints/Credits"]
@@ -74,9 +85,9 @@ position = Vector2( 64, 10 )
 shape = SubResource( 7 )
 
 [node name="Settings" type="ColorRect" parent="ButtonHints"]
-margin_top = 48.0
+margin_top = 56.0
 margin_right = 132.0
-margin_bottom = 68.0
+margin_bottom = 80.0
 size_flags_vertical = 3
 
 [node name="Settings" type="Area2D" parent="ButtonHints/Settings"]
@@ -98,19 +109,19 @@ grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="Buttons"]
 margin_right = 132.0
-margin_bottom = 20.0
+margin_bottom = 24.0
 text = "Start"
 
 [node name="CreditsButton" type="Button" parent="Buttons"]
-margin_top = 24.0
+margin_top = 28.0
 margin_right = 132.0
-margin_bottom = 44.0
+margin_bottom = 52.0
 text = "Credits"
 
 [node name="SettingsButton" type="Button" parent="Buttons"]
-margin_top = 48.0
+margin_top = 56.0
 margin_right = 132.0
-margin_bottom = 68.0
+margin_bottom = 80.0
 text = "Settings"
 
 [node name="FakeButtons" type="Node2D" parent="."]
@@ -236,6 +247,7 @@ shape = SubResource( 4 )
 position = Vector2( 0, 600 )
 shape = SubResource( 5 )
 
+[connection signal="pressed" from="Buttons/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="Buttons/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="button_down" from="FakeButtons/Start/StartButton" to="FakeButtons/Start" method="_pressed"]
 [connection signal="button_up" from="FakeButtons/Start/StartButton" to="FakeButtons/Start" method="_let_go"]
