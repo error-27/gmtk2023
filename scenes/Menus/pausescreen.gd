@@ -1,4 +1,4 @@
-extends Popup
+extends Panel
 
 
 #onready var pause_enabled = (false)
