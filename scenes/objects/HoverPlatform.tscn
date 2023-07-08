@@ -25,6 +25,7 @@ tracks/0/keys = {
 }
 
 [node name="Platform" type="KinematicBody2D"]
+position = Vector2( 402, 231 )
 input_pickable = true
 script = ExtResource( 2 )
 horizontal = false
@@ -49,7 +50,7 @@ autostart = true
 [node name="Panel" type="Panel" parent="."]
 visible = false
 margin_right = 159.0
-margin_bottom = 124.0
+margin_bottom = 143.0
 theme = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="Panel"]
@@ -84,5 +85,11 @@ margin_top = 56.0
 margin_right = 159.0
 margin_bottom = 80.0
 text = "Reverse-Hzntl"
+
+[node name="Reverse2" type="CheckBox" parent="Panel/VBoxContainer"]
+margin_top = 84.0
+margin_right = 159.0
+margin_bottom = 108.0
+text = "Reverse-Vtcl"
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
