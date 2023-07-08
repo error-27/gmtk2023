@@ -53,3 +53,7 @@ func cold_open():
 	for button in $FakeButtons.get_children():
 		(button as RigidBody2D).set_position(Vector2(rand_range(OS.window_size.x - 40, 132), rand_range(OS.window_size.y - 10, 132)))
 		(button as RigidBody2D).rotate(rand_range(0, 6))
+
+
+func _on_StartButton_pressed():
+	get_tree().change_scene("res://scenes/CharacterSelect.tscn")
