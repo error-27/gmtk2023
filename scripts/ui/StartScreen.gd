@@ -60,3 +60,7 @@ func cold_open():
 
 func _on_StartButton_pressed():
 	get_tree().change_scene("res://scenes/CharacterSelect.tscn")
+
+
+func _on_SettingsButton_pressed():
+	$Pausescreen.show()
