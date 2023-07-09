@@ -66,12 +66,13 @@ rect_scale = Vector2( 2, 2 )
 theme = ExtResource( 8 )
 text = "Use WASD 
 or 
-<- ^ -> to move,"
+<- ^ -> to move,
+R to reset"
 
 [node name="ColorRect" type="ColorRect" parent="Label"]
 show_behind_parent = true
 margin_left = -3.0
 margin_top = -3.0
 margin_right = 108.0
-margin_bottom = 54.0
+margin_bottom = 81.0
 color = Color( 0.34902, 0.317647, 0.317647, 0.52549 )
