@@ -26,6 +26,8 @@ func _ready():
 	credits_label.bbcode_text = copyright_text
 	
 	cold_open()
+	
+	$ColorRect/AnimationPlayer.play("pulse")
 
 
 func _credits_links(meta):
