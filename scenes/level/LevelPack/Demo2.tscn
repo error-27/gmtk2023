@@ -45,7 +45,7 @@ margin_right = 277.0
 margin_bottom = 304.0
 rect_scale = Vector2( 2, 2 )
 text = "Enter Level edit using
- [ Space ]
+ [ Enter ]
 L-Click to place
 R-Click to remove "
 
