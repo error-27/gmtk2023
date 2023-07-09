@@ -24,6 +24,6 @@ func _process(delta):
 				tiles += 1
 				$CanvasLayer/TileLabel.text = str(tiles) + " tiles"
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("EditMode"):
 		edit_mode = not edit_mode
 		$CanvasLayer.visible = edit_mode

@@ -39,6 +39,7 @@ script = ExtResource( 3 )
 subject_path = NodePath("../Player")
 
 [node name="LevelEdit" parent="." instance=ExtResource( 6 )]
+tiles = 0
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 251, 410 )
