@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=2]
+[gd_resource type="Theme" load_steps=10 format=2]
 
 [ext_resource path="res://assets/superstar_memesbruh03.ttf" type="DynamicFontData" id=1]
 
@@ -25,6 +25,17 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color( 0.705882, 1, 0.411765, 1 )
 
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.705882, 1, 0.411765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
 border_width_left = 4
@@ -45,6 +56,9 @@ default_font = SubResource( 2 )
 Button/styles/hover = SubResource( 6 )
 Button/styles/normal = SubResource( 4 )
 Button/styles/pressed = SubResource( 5 )
+HSlider/styles/grabber_area = SubResource( 7 )
+HSlider/styles/grabber_area_highlight = SubResource( 7 )
+HSlider/styles/slider = SubResource( 8 )
 Panel/styles/panel = SubResource( 3 )
 TitleLabel/base_type = "Label"
 TitleLabel/fonts/font = SubResource( 1 )
