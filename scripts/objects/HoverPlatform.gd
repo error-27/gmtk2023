@@ -44,7 +44,6 @@ func _start_tween():
 	tween.start()
 
 func _reverse_tween(_object, _key):
-	print("reverse reverse")
 	positions.invert()
 	_start_tween()
 
