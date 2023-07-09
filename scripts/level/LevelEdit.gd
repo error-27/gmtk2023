@@ -6,6 +6,9 @@ onready var edit_map = $TileMap
 
 var edit_mode = false
 
+func _ready():
+	$CanvasLayer/TileLabel.text = str(tiles) + " tiles"
+
 func _process(delta):
 	if edit_mode:
 		if Input.is_mouse_button_pressed(BUTTON_LEFT):
