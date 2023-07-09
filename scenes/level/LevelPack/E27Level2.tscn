@@ -15,8 +15,13 @@ extents = Vector2( 55.5, 63.5 )
 [node name="Demo1" type="Node2D"]
 script = ExtResource( 4 )
 finish_line = NodePath("FinishArea")
+<<<<<<< HEAD
 next_lvl_num = -1
 next_lvl = "res://scenes/Menus/GameEndScreen.tscn"
+=======
+next_lvl_num = -4
+next_lvl = "res://scenes/level/LevelPack/E27Level3.tscn"
+>>>>>>> 62459c0793d257be6939950be0bd76e39ee632e0
 player = NodePath("Player")
 camera = NodePath("Camera2D")
 
