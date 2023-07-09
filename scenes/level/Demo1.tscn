@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tiles/level_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/HoverPlatform.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/level/Level.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/level/LevelEdit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/goalpost.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 55.5, 63.5 )
@@ -42,3 +43,8 @@ position = Vector2( 938, 460 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
 position = Vector2( -45.5, -53.5 )
 shape = SubResource( 1 )
+
+[node name="Goalpost" type="Sprite" parent="."]
+position = Vector2( 891, 432 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
