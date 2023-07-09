@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/tiles/level_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/HoverPlatform.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/level/LevelEdit.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/objects/goalpost.png" type="Texture" id=7]
+[ext_resource path="res://assets/MenuTheme.tres" type="Theme" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 55.5, 63.5 )
@@ -62,6 +63,7 @@ margin_top = 198.0
 margin_right = 359.0
 margin_bottom = 289.0
 rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 8 )
 text = "Use WASD 
 or 
 <- ^ -> to move,"
@@ -71,5 +73,5 @@ show_behind_parent = true
 margin_left = -3.0
 margin_top = -3.0
 margin_right = 108.0
-margin_bottom = 50.0
+margin_bottom = 54.0
 color = Color( 0.34902, 0.317647, 0.317647, 0.52549 )
