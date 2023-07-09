@@ -14,10 +14,28 @@ extents = Vector2( 55.5, 63.5 )
 [node name="Demo1" type="Node2D"]
 script = ExtResource( 4 )
 finish_line = NodePath("FinishArea")
-next_lvl_num = 5
+next_lvl_num = 7
 next_lvl = "res://scenes/level/LevelPack/E27Level2.tscn"
 player = NodePath("Player")
 camera = NodePath("Camera2D")
+
+[node name="Label" type="Label" parent="."]
+margin_left = 92.0
+margin_top = 211.0
+margin_right = 392.0
+margin_bottom = 278.0
+theme = ExtResource( 2 )
+theme_type_variation = "TitleLabel"
+text = "Right click yourself
+to edit stats"
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+show_behind_parent = true
+margin_left = -3.0
+margin_top = -3.0
+margin_right = 302.0
+margin_bottom = 83.0
+color = Color( 0.34902, 0.317647, 0.317647, 0.52549 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
@@ -48,21 +66,3 @@ shape = SubResource( 1 )
 position = Vector2( 891, 432 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 92.0
-margin_top = 211.0
-margin_right = 392.0
-margin_bottom = 278.0
-theme = ExtResource( 2 )
-theme_type_variation = "TitleLabel"
-text = "Right click yourself
-to edit stats"
-
-[node name="ColorRect" type="ColorRect" parent="Label"]
-show_behind_parent = true
-margin_left = -3.0
-margin_top = -3.0
-margin_right = 302.0
-margin_bottom = 83.0
-color = Color( 0.34902, 0.317647, 0.317647, 0.52549 )

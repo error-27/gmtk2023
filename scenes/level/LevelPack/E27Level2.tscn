@@ -20,6 +20,23 @@ next_lvl = "res://scenes/level/LevelPack/E27Level3.tscn"
 player = NodePath("Player")
 camera = NodePath("Camera2D")
 
+[node name="Label" type="Label" parent="."]
+margin_left = 108.0
+margin_top = 329.0
+margin_right = 508.0
+margin_bottom = 364.0
+theme = ExtResource( 2 )
+theme_type_variation = "TitleLabel"
+text = "You can also edit platforms"
+
+[node name="ColorRect" type="ColorRect" parent="Label"]
+show_behind_parent = true
+margin_left = -9.0
+margin_top = -20.0
+margin_right = 403.0
+margin_bottom = 66.0
+color = Color( 0.34902, 0.317647, 0.317647, 0.52549 )
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
 tile_set = ExtResource( 1 )
@@ -49,23 +66,6 @@ shape = SubResource( 1 )
 position = Vector2( 1414, 432 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = 108.0
-margin_top = 329.0
-margin_right = 508.0
-margin_bottom = 364.0
-theme = ExtResource( 2 )
-theme_type_variation = "TitleLabel"
-text = "You can also edit platforms"
-
-[node name="ColorRect" type="ColorRect" parent="Label"]
-show_behind_parent = true
-margin_left = -9.0
-margin_top = -20.0
-margin_right = 403.0
-margin_bottom = 66.0
-color = Color( 0.34902, 0.317647, 0.317647, 0.52549 )
 
 [node name="Platform" parent="." instance=ExtResource( 8 )]
 position = Vector2( 688, 283 )
