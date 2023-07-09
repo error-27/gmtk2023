@@ -10,11 +10,15 @@ config_version=4
 
 [application]
 
-config/name="GMTK2023"
+config/name="//TODO - GMTK2023"
 run/main_scene="res://scenes/StartScreen.tscn"
 boot_splash/image="res://assets/jamlogo2023.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://assets/objects/player_preview1.png"
+
+[display]
+
+window/size/resizable=false
 
 [gui]
 
