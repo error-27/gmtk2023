@@ -8,7 +8,7 @@ func _ready():
 	
 	copyright_text += "Created by [url=https://github.com/ErrorInCode27][Error_27][/url] and [url=https://github.com/Wired-Weasel]Wired-Weasel[/url] for GMTK Game Jam 2023\n"
 	copyright_text += "Made using the [url=https://godotengine.org/license]Godot game engine[/url]\n"
-	copyright_text += "Using [url=https://www.dafont.com/superstar-2.font]Superstar font[/url]"
+	copyright_text += "Using [url=https://www.dafont.com/superstar-2.font]Superstar font[/url]\n"
 	copyright_text += "Using [url=https://opengameart.org/content/platformer-jumping-sounds]Jump sound effects by dklon[/url]"
 	
 	# Components and license names
@@ -64,3 +64,7 @@ func _on_StartButton_pressed():
 
 func _on_SettingsButton_pressed():
 	$Pausescreen.show()
+
+
+func _on_PauseClose_pressed():
+	$Pausescreen.hide()
