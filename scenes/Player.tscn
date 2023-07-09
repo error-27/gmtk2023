@@ -9,7 +9,7 @@
 extents = Vector2( 18, 22.5 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( -12, -8, -21, -2, -7, 3, -18, 24, 16, 24, 13, 3, 18, -21, 8, -17, -1, -21, -24, -20 )
+polygon = PoolVector2Array( -18, 24, 18, 24, 18, -21, 0, -24, -15, -24, -24, -18 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "run"
