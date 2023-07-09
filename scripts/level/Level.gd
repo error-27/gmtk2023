@@ -24,3 +24,8 @@ func transition_next_lvl(body):
 		intro.next_lvl = next_lvl
 		get_viewport().add_child(intro)
 		queue_free()
+
+func _process(delta):
+	if Input.is_action_just_pressed("Reset"):
+		get_tree().change_scene(filename)
+		
