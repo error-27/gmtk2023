@@ -28,6 +28,9 @@ tile_data = PoolIntArray( 0, 0, 0, 20, 3, 0, 21, 3, 0, 65536, 0, 0, 65556, 3, 0,
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 464, 357 )
+h_distance = 200
+v_distance = 40
+speed = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
