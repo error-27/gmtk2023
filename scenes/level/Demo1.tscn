@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tiles/level_tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/objects/HoverPlatform.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/level/Level.gd" type="Script" id=4]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/level/LevelEdit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/objects/goalpost.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 55.5, 63.5 )
@@ -16,6 +17,7 @@ finish_line = NodePath("FinishArea")
 next_lvl_num = -1
 next_lvl = "res://scenes/CharacterSelect.tscn"
 player = NodePath("Player")
+camera = NodePath("Camera2D")
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 3, 3 )
@@ -26,8 +28,12 @@ tile_data = PoolIntArray( 0, 0, 0, 20, 3, 0, 21, 3, 0, 65536, 0, 0, 65556, 3, 0,
 
 [node name="Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( 464, 357 )
+h_distance = 200
+v_distance = 40
+speed = 3.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+current = true
 script = ExtResource( 3 )
 subject_path = NodePath("../Player")
 
@@ -42,3 +48,8 @@ position = Vector2( 938, 460 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
 position = Vector2( -45.5, -53.5 )
 shape = SubResource( 1 )
+
+[node name="Goalpost" type="Sprite" parent="."]
+position = Vector2( 891, 432 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
