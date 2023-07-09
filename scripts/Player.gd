@@ -37,6 +37,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("Jump"):
 			velocity.y = jump_height
 			animator.stop()
+			$AudioStreamPlayer.play(0)
 	else:
 		if Input.is_action_just_released("Jump") and velocity.y < jump_in_air:
 			velocity.y = jump_in_air

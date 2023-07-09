@@ -9,6 +9,7 @@ func _ready():
 	$ColorRect/Label.text = "Level " + str(level_num)
 	show()
 	timer.start(2)
+	$AudioStreamPlayer.play()
 	yield(timer, "timeout")
 	hide()
 	get_tree().change_scene(next_lvl)
