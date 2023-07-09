@@ -9,6 +9,12 @@ export(int) var jump_in_air = -45
 
 onready var animator = $AnimationPlayer
 
+func _ready():
+	$Panel/VBoxContainer/JumpHeight.connect("value_changed", self, "update_jump")
+	$Panel/VBoxContainer/JumpHeight.value = -jump_height
+	$Panel/VBoxContainer/WalkSpeed.connect("value_changed", self, "update_speed")
+	$Panel/VBoxContainer/WalkSpeed.value = move_speed
+
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	apply_gravity()
@@ -47,3 +53,15 @@ func apply_friction():
 	velocity.x = move_toward(velocity.x, 0, floor_friction)
 func apply_acceleration(amount):
 	velocity.x = move_toward(velocity.x, move_speed * amount, 20)
+
+# Control panel thing lmao
+func _input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_RIGHT && event.pressed:
+			$Panel.visible = not $Panel.visible
+
+func update_jump(to):
+	jump_height = -to
+
+func update_speed(to):
+	move_speed = to
